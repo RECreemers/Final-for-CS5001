@@ -6,39 +6,30 @@
 * Course: CS5001
 
 ## Description 
-General overview of the project, what you did, why you did it, etc. 
-
 My goal was to make the Snake Game in python. 
 The features I included were:
-    1) A start menu with a reactive UI
-    2) Sound that changes based on which fruit you ate
-    3) A snake that goes around the screen and grows with each apple touched
-    4) A fruit(sometimes red, sometimes golden, it was weighted) that would randomize it's position after the snake head touched it, but not randomize on top of the snake body
-    5) A score counter that would go up by 10 after each apple touch
-    6) A snake speed change after it touched either a golden or red apple for the first time
-    7) A snake that had graphics on top of the bounding box rectangles created that changed based on the snake's positioning
+1) A start menu with a reactive UI
+2) Sound that changes based on which fruit you ate
+3) A snake that goes around the screen and grows with each apple touched
+4) A fruit(sometimes red, sometimes golden, it was weighted) that would randomize it's position after the snake head touched it, but not randomize on top of the snake body
+5) A score counter that would go up by 10 after each apple touch
+6) A snake speed change after it touched either a golden or red apple for the first time
+7) A snake that had graphics on top of the bounding box rectangles created that changed based on the snake's positioning
 
-    I chose this game because I've been wanting to learn how to code a game for a while, and this seemed like a good way to dip my feet into it. I also wanted to go with the snake game build style that would make it so you could include artwork for the sprite, because user experience is important for me to figure out if I want to make an enjoyable game in the future.  
-
+I chose this game because I've been wanting to learn how to code a game for a while, and this seemed like a good way to dip my feet into it. I also wanted to go with the snake game build style that would make it so you could include artwork for the sprite, because user experience is important for me to figure out if I want to make an enjoyable game in the future.  
 
 ## Key Features
-    So the key features that I am pretty proud of is getting the UI on the Start Menu to work. It took me a very long time to figure out how I had to nest my code to get the color to change on the text for the title screen without breaking the code. But with the start menu implimented, it feels more like a "real" game to me as opposed to a code test.
+So the key features that I am pretty proud of is getting the UI on the Start Menu to work. It took me a very long time to figure out how I had to nest my code to get the color to change on the text for the title screen without breaking the code. But with the start menu implimented, it feels more like a "real" game to me as opposed to a code test.
 
-    I'm also proud of the idea to have 2 fruits with different colors and sounds, to mix it up. For playing, I split the randomness to 95% red, 5% golden apple, which is better for gameplay but for testing, it will be a bit annoying to have it pop up. You can change it in the __init__ of the fruit class under "fruit_weights" if it is bothering you!
+I'm also proud of the idea to have 2 fruits with different colors and sounds, to mix it up. For playing, I split the randomness to 95% red, 5% golden apple, which is better for gameplay but for testing, it will be a bit annoying to have it pop up. You can change it in the __init__ of the fruit class under "fruit_weights" if it is bothering you!
 
 ## Guide
-How do we run your project? What should we do to see it in action? - Note this isn't installing, this is actual use of the project.. If it is a website, you can point towards the gui, use screenshots, etc talking about features. 
-
 There will be 2 zipped files, "Rachel's Snake Game PC" and "Rachel's Snake Game Windows". Download the zipped file for the system you are running. Unzip the file and look for "Rachel's Snake Game" as either an exe or exec dependind. Double click and you should be good to go!
 
 ## Installation Instructions
-If we wanted to run this project locally, what would we need to do?  If we need to get API key's include that information, and also command line startup commands to execute the project. If you have a lot of dependencies, you can also include a requirements.txt file, but make sure to include that we need to run `pip install -r requirements.txt` or something similar.
-
 In the terminal, you have to `pip install pygame` and have python downloaded from the internet to run it. 
 
 ## Code Review
-Go over key aspects of code in this section. Both link to the file, include snippets in this report (make sure to use the [coding blocks](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code)).  Grading wise, we are looking for that you understand your code and what you did. 
-
 ```python
 main_music = pygame.mixer.Sound("Art/Music/main_theme.mp3")
 fast_music = pygame.mixer.Sound("Art/Music/star_theme.mp3")
@@ -135,11 +126,11 @@ Getting the trailing squares of the snake, and have them be position references 
 Pygame was just a really steep learning curve.
 
 ## Example Runs
-Explain how you documented running the project, and what we need to look for in your repository (text output from the project, small videos, links to videos on youtube of you running it, etc)
-
-So I didn't see this until I started working on the UI, so I have some pictures of that, and I have the code to show you where I stopped and started rewriting it each time. I want to set up versioning at more regular intervals in the future, becuase there were several times where I changed something that I thought was small, and it turned out it would interrupt the flow and break the game entirely. 
+I typically ran the code everytime I tried to make a change. I want to set up versioning at more regular intervals in the future, becuase there were several times where I changed something that I thought was small, and it turned out it would interrupt the flow and break the game entirely. 
 
 For the videos that I do have, they are of where I was before I started rewriting code to make it either better to understand what I was doing better.
+
+For the pictures I have included, I show screen shots of me going through the menu creation process. 
 
 ## Testing
 I tested my code a lot just by running it to see if anything would come up, or if the screen broke. A lot of the time I would either get a black box with a spinning wheel or just a spinning wheel that would make me exit the test. 
@@ -149,9 +140,6 @@ Sometimes, though, I couldn't understand why some of my edits weren't working, s
 But when it came to see if something functioned, I would typically try to make sure the basics worked before I did anything fancy to it. Take the moving of the snake. I started with a box and tried to make it move a set incriment across the screen as just a box, no image of a snake on it. Once I had that, I tried to make multiple boxes move across the screen following the first, no jpegs on top. Once the boxes moved appropriately in one direction, I would add on top of it different directions, and see if that would work. Only after it was function without the art could I add the bells and whistles on top of it to make it pretty. 
 
 I did a similar thing for the fruit, adding the first thing of "this is a box". Then "when box is touched by snake head, randomly rearrange". Then "when box randomizes, +10 to the score counter, etc. 
-
-> _Make it easy for us to know you *ran the project* and *tested the project* before you submitted this report!_
-
 
 ## Missing Features / What's Next
 I didn't get to a lot of things:
