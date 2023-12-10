@@ -16,7 +16,7 @@ The features I included were:
     4) A fruit(sometimes red, sometimes golden, it was weighted) that would randomize it's position after the snake head touched it, but not randomize on top of the snake body
     5) A score counter that would go up by 10 after each apple touch
     6) A snake speed change after it touched either a golden or red apple for the first time
-    7) A snake that had graphics on top of the boundingbox rectangles created that changed based on the snake's positioning
+    7) A snake that had graphics on top of the bounding box rectangles created that changed based on the snake's positioning
 
     I chose this game because I've been wanting to learn how to code a game for a while, and this seemed like a good way to dip my feet into it. I also wanted to go with the snake game build style that would make it so you could include artwork for the sprite, because user experience is important for me to figure out if I want to make an enjoyable game in the future.  
 
@@ -39,9 +39,93 @@ In the terminal, you have to `pip install pygame` and have python downloaded fro
 ## Code Review
 Go over key aspects of code in this section. Both link to the file, include snippets in this report (make sure to use the [coding blocks](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code)).  Grading wise, we are looking for that you understand your code and what you did. 
 
-Okay, so there are a lot of "Key Aspects" to this code, and for each function in each class I have documentation at the top to let you know what is happening at each point.
+```python
+main_music = pygame.mixer.Sound("Art/Music/main_theme.mp3")
+fast_music = pygame.mixer.Sound("Art/Music/star_theme.mp3")
+pygame.mixer.Channel(0).play(main_music, -1) # The -1 is the loop, at negative -1 it's infinite
+pygame.mixer.Channel(1).play(fast_music, -1)
+pygame.mixer.Channel(1).pause()
+```
 
-I guess the part where the most action occurs is at
+This was an important block that I found had to absolutely be outside of the classes for initialization. It established the channels that the music would play on, and started the pause/unpause switch back and forth I created for the background music change. It had to be specifically paused, not stopped, or else the music would restart every time an apple was picked up, and that was really annoying.
+
+
+```python
+        if game_state == "game":
+            if event.type == FPS:
+                main_game.updates()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    if main_game.snake.direction.x != 1:
+                        main_game.snake.direction = Vector2(-1, 0)
+                if event.key == pygame.K_RIGHT:
+                    if main_game.snake.direction.x != -1:
+                        main_game.snake.direction = Vector2(1, 0)
+                if event.key == pygame.K_UP:
+                    if main_game.snake.direction.y != 1:
+                        main_game.snake.direction = Vector2(0, -1)
+                if event.key == pygame.K_DOWN:
+                    if main_game.snake.direction.y != -1:
+                        main_game.snake.direction = Vector2(0, 1)
+```
+
+This was a huge block in the True loop which was the gameplay. Basically, it made it so that the snake could move the direction up, down, left, and right, but if you tried to move the snake in the opposite direction of where it was currently moving (moving left, try to go right) you can't. It also had that little bit at the top - game_state = "game". I used that variable to allow the gameplay to switch from the game mode with the snake, over to the menu, where the inputs caused different things to happen, such as selecting start or quit.
+
+```python
+        if self.fruit.position == self.snake.snake_body[0]:
+            if self.fruit.chosen_fruit[0] == self.fruit.golden_apple:
+                self.snake_speed = self.fast_snake_speed
+                pygame.mixer.Channel(0).pause()
+                pygame.mixer.Channel(1).unpause()
+            else:
+                self.snake_speed = self.regular_snake_speed
+                pygame.mixer.Channel(1).pause()
+                pygame.mixer.Channel(0).unpause()
+            self.fruit.randomize()
+            self.snake.add_block()
+            self.score = (self.score + 10)
+```
+
+I was quite proud of this little spot. The way this is set up, in the future I can easily add more fruits, AND I can change the score based on what type of fruit was eaten. While it's in a super vanilla version, where there are only 2 fruit options and both give a score of +10 if picked. I also thought that the sound change up based on the golden apple was hilarious. The pause/unpause bit here though, that allowed the music to pick back up where it left off, and not restart it. 
+
+```python
+        if game_state == "menu":
+            start_menu = Popups()
+            start_menu.draw_title_popup()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_LEFT:
+                    color_start = color_green
+                    color_quit = color_white
+                if event.key == pygame.K_SPACE or event.key == pygame.K_RETURN:  # Action is here
+                    if color_start == color_green:
+                        pygame.mixer.Channel(0).unpause()
+                        game_state = "game"
+                if event.key == pygame.K_RIGHT:
+                    color_quit = color_green
+                    color_start = color_white
+                if event.key == pygame.K_SPACE or event.key == pygame.K_RETURN:  # Action is here
+                    if color_quit == color_green:
+                        pygame.quit()
+                        sys.exit()
+```
+
+The menu! I made the text colors change when the left and right buttons were pressed, and I was able to start adding in quality of life changes to inputs, such as being able to start with either space or return. I still want to add in a click option and a hover color change. The little bit in there that has the `pygame.mixer.Channel(0).unpause()` allowed the music to unpause again when after the game restarts. Without it, it was just silent whe you started the game back up intil you touched an apple.
+
+
+```python
+        if self.add_snake_block == True:
+            snake_body_copy = self.snake_body[:]
+            snake_body_copy.insert(0,snake_body_copy[0] + self.direction)
+            self.snake_body = snake_body_copy[:]
+            self.add_snake_block = False
+        else:
+            snake_body_copy = self.snake_body[:-1]
+            snake_body_copy.insert(0, snake_body_copy[0] + self.direction)
+            self.snake_body = snake_body_copy[:]
+```
+
+This is the meat and potatoes of the game. This section allows the snake to move forward by copying the snake_body list to modify it, adding a new Vector2 to the front of the list and removing the last Vector2 from the list. The what changes in the Vector2 list in the list (x,y) is determined by the self.direction, which changes based on the input of the play in the left, right, up, and down, which is going to always be a +1 or -1 in either the x or y.  If the snake touches a fruit, the add_snake_block is set to True and the last Vector 2 is simply not removed from the list that time. 
+
 
 ### Major Challenges
 Learning pygame, I had to quickly try to learn all the funtions and methods I could call, and WHY you called things in a certain way. Other than the basics, I didn't know how they all interacted with eachother, such as why you would use Surface instead of get_rect, and what features they offered for each.
@@ -53,7 +137,9 @@ Pygame was just a really steep learning curve.
 ## Example Runs
 Explain how you documented running the project, and what we need to look for in your repository (text output from the project, small videos, links to videos on youtube of you running it, etc)
 
-So I didn't see this until I started working on the UI, so I have some pictures of that, and I have the code to show you where I stopped and started rewriting it each time. I basically got to "pygames opens and closes, and a box moves across the screen" on main_1 before I hopped over to a tutorial because I could tell my filing wasn't going to be nearly neat enough to pull off what I wanted. I then followed along with the tutorial for main_2, and then tried to rewrite main_2 from memory in main_3 and worked through (partially) a logic sudocode to really make sure I was understanding the math and WHY everything was happening when it was. After I had a cute working snake game with sound in main_3, I moved onto main_4 where the final is, and where I tried adding the features that made a game playable for the average user (menus). 
+So I didn't see this until I started working on the UI, so I have some pictures of that, and I have the code to show you where I stopped and started rewriting it each time. I want to set up versioning at more regular intervals in the future, becuase there were several times where I changed something that I thought was small, and it turned out it would interrupt the flow and break the game entirely. 
+
+For the videos that I do have, they are of where I was before I started rewriting code to make it either better to understand what I was doing better.
 
 ## Testing
 I tested my code a lot just by running it to see if anything would come up, or if the screen broke. A lot of the time I would either get a black box with a spinning wheel or just a spinning wheel that would make me exit the test. 
