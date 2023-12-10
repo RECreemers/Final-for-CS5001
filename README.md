@@ -24,7 +24,7 @@ So the key features that I am pretty proud of is getting the UI on the Start Men
 I'm also proud of the idea to have 2 fruits with different colors and sounds, to mix it up. For playing, I split the randomness to 95% red, 5% golden apple, which is better for gameplay but for testing, it will be a bit annoying to have it pop up. You can change it in the __init__ of the fruit class under "fruit_weights" if it is bothering you!
 
 ## Guide
-There will be 2 zipped files, "Rachel's Snake Game PC" and "Rachel's Snake Game Windows". Download the zipped file for the system you are running. Unzip the file and look for "Rachel's Snake Game" as either an exe or exec dependind. Double click and you should be good to go!
+There are 2 zipped files, "Rachel's Snake Game PC" and "Rachel's Snake Game Windows". Download the zipped file for the system you are running. Unzip the file and look for "Rachel's Snake Game" as either an exe or exec depending. Double click and you should be good to go!
 
 ## Installation Instructions
 In the terminal, you have to `pip install pygame` and have python downloaded from the internet to run it. 
@@ -130,7 +130,24 @@ I typically ran the code everytime I tried to make a change. I want to set up ve
 
 For the videos that I do have, they are of where I was before I started rewriting code to make it either better to understand what I was doing better.
 
-For the pictures I have included, I show screen shots of me going through the menu creation process. 
+Version 1:
+https://github.com/RECreemers/Final-for-CS5001/assets/153467146/aadc87d9-7285-4747-b7e8-6ffb5db4c3a2
+
+Version 2:
+https://github.com/RECreemers/Final-for-CS5001/assets/153467146/3900c17f-1eec-453b-bf58-584c20c07dbb
+
+Version 3:
+https://github.com/RECreemers/Final-for-CS5001/assets/153467146/14bc60e1-b1f1-48f2-8074-03e4e2043e1b
+
+For the pictures I have included, I show screen shots of me going through the menu creation process.
+
+<img width="802" alt="Pic_1 - Basic testing image" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/337f124c-fe53-49dd-8232-0c594eb87754">
+<img width="815" alt="Pic_2 - Most common visual" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/985da92b-85bf-4067-b385-7e63d6658931">
+<img width="791" alt="Pic_3 - Troubleshooting the Menu Screen" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/36c26a4f-31f9-4554-a946-9e12bf7a4c2d">
+<img width="815" alt="Pic_4 - Finally got something to pop up" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/3320f263-9569-4213-bd55-9d9363bf6c6e">
+<img width="1393" alt="Pic_5 - Adding Layes and playing with colors and pygame colors" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/8d8fa5c9-0578-46e4-a8fa-917216e0c8f2">
+<img width="1345" alt="Pic_6 - Menu is now attractive" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/9128112b-0ddf-458d-bc4f-74fdf383b30a">
+
 
 ## Testing
 I tested my code a lot just by running it to see if anything would come up, or if the screen broke. A lot of the time I would either get a black box with a spinning wheel or just a spinning wheel that would make me exit the test. 
