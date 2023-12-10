@@ -1,7 +1,7 @@
 # Final Project Report
 
 * Student Name: Rachel Creemers
-* Github Username: Rachel Creemers
+* Github Username: RECreemers
 * Semester: Fall 2023
 * Course: CS5001
 
