@@ -139,15 +139,6 @@ https://github.com/RECreemers/Final-for-CS5001/assets/153467146/3900c17f-1eec-45
 Version 3:
 https://github.com/RECreemers/Final-for-CS5001/assets/153467146/14bc60e1-b1f1-48f2-8074-03e4e2043e1b
 
-For the pictures I have included, I show screen shots of me going through the menu creation process.
-
-<img width="802" alt="Pic_1 - Basic testing image" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/337f124c-fe53-49dd-8232-0c594eb87754">
-<img width="815" alt="Pic_2 - Most common visual" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/985da92b-85bf-4067-b385-7e63d6658931">
-<img width="791" alt="Pic_3 - Troubleshooting the Menu Screen" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/36c26a4f-31f9-4554-a946-9e12bf7a4c2d">
-<img width="815" alt="Pic_4 - Finally got something to pop up" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/3320f263-9569-4213-bd55-9d9363bf6c6e">
-<img width="1393" alt="Pic_5 - Adding Layes and playing with colors and pygame colors" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/8d8fa5c9-0578-46e4-a8fa-917216e0c8f2">
-<img width="1345" alt="Pic_6 - Menu is now attractive" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/9128112b-0ddf-458d-bc4f-74fdf383b30a">
-
 
 ## Testing
 I tested my code a lot just by running it to see if anything would come up, or if the screen broke. A lot of the time I would either get a black box with a spinning wheel or just a spinning wheel that would make me exit the test. 
@@ -157,6 +148,27 @@ Sometimes, though, I couldn't understand why some of my edits weren't working, s
 But when it came to see if something functioned, I would typically try to make sure the basics worked before I did anything fancy to it. Take the moving of the snake. I started with a box and tried to make it move a set incriment across the screen as just a box, no image of a snake on it. Once I had that, I tried to make multiple boxes move across the screen following the first, no jpegs on top. Once the boxes moved appropriately in one direction, I would add on top of it different directions, and see if that would work. Only after it was function without the art could I add the bells and whistles on top of it to make it pretty. 
 
 I did a similar thing for the fruit, adding the first thing of "this is a box". Then "when box is touched by snake head, randomly rearrange". Then "when box randomizes, +10 to the score counter, etc. 
+
+For the pictures I have included, I show screen shots of me going through the menu creation process.
+
+Basic Testing Image:
+<img width="802" alt="Pic_1 - Basic testing image" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/337f124c-fe53-49dd-8232-0c594eb87754">
+
+The Visual I Got Most Of The Time While Testing:
+<img width="815" alt="Pic_2 - Most common visual" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/985da92b-85bf-4067-b385-7e63d6658931">
+
+Troubleshooting The Menu Screen:
+<img width="791" alt="Pic_3 - Troubleshooting the Menu Screen" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/36c26a4f-31f9-4554-a946-9e12bf7a4c2d">
+
+Got Something To Pop Up On The Menu Screen:
+<img width="815" alt="Pic_4 - Finally got something to pop up" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/3320f263-9569-4213-bd55-9d9363bf6c6e">
+
+Starting To Add Layers With Colors And Pygame Colors:
+<img width="1393" alt="Pic_5 - Adding Layes and playing with colors and pygame colors" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/8d8fa5c9-0578-46e4-a8fa-917216e0c8f2">
+
+Menu Is Now Attractive:
+<img width="1345" alt="Pic_6 - Menu is now attractive" src="https://github.com/RECreemers/Final-for-CS5001/assets/153467146/9128112b-0ddf-458d-bc4f-74fdf383b30a">
+
 
 ## Missing Features / What's Next
 I didn't get to a lot of things:
@@ -192,5 +204,5 @@ I'm pretty happy that I've also learned how to debug a bunch of things. The prin
 
 I think I need to drill down more on organization of the files and breaking things down. I was frusterated for multiple hours in making my game because I kept accidentally breaking flow and I couldn't figure out why, and it actively stopped me from adding in a few featurs I really wanted to complete. And if I want to keep building cute things, I NEED to be able to keep the pipeline organized. It would also be extremely useful to find out more ways you SHOULD NOT impliment certain code to make it work.
 
-My key takeaways is that I need to drill the basics more in general if I want to be creative with programming, and I'm confident that the next semester and summer will provide that for me. It also became very clear to me how I'm playing with a very small toolbox in python right now, and am excited to see what other things the program will allow me to do in the future. Lastly, I'm happy to be able to start to read and sift through code so I can learn some other programming languages, as I've had my eye on Godot for the last few months.
+My key takeaways is that I need to drill the basics more in general if I want to be creative with programming, and I'm confident that the next semester and summer will provide that for me. It also became very clear to me how I'm playing with a very small toolbox in python right now, and am excited to see what other things the program will allow me to do in the future. Lastly, I'm happy to be able to start to read and sift through code so I can learn some other programming languages in a bit. 
 
