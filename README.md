@@ -6,7 +6,15 @@
 * Course: CS5001
 
 ## Description 
-My goal was to make the Snake Game in python. 
+My goal was to make the Snake Game in python.
+
+For the playing of Snake Game, I have included .exe and .exec files so that you can play it on both Windows and Mac. Online it said that you couldn't look at .exe or .exec code, so I've included my code in the materials
+submitted. 
+
+The final code file is main_5.
+
+This is the extremely clean, pep8 clean code, which the .exe and .exec were made with the uncleaned for pep8 version, in case you know a way to crack into those and are confused by the discrepency.
+
 The features I included were:
 1) A start menu with a reactive UI
 2) Sound that changes based on which fruit you ate
