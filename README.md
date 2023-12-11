@@ -32,7 +32,7 @@ In the terminal, you have to `pip install pygame` and have python downloaded fro
 
 ## Code Review
 
-The code for the game is located in file main_5, since exe and exec files can't be broken into.
+The code for the game is located in file main_5.py, since exe and exec files can't be broken into.
 
 ```python
 main_music = pygame.mixer.Sound("Art/Music/main_theme.mp3")
