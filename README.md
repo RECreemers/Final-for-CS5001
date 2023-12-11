@@ -8,13 +8,6 @@
 ## Description 
 My goal was to make the Snake Game in python.
 
-For the playing of Snake Game, I have included .exe and .exec files so that you can play it on both Windows and Mac. Online it said that you couldn't look at .exe or .exec code, so I've included my code in the materials
-submitted. 
-
-The final code file is main_5.
-
-This is the extremely clean, pep8 clean code, which the .exe and .exec were made with the uncleaned for pep8 version, in case you know a way to crack into those and are confused by the discrepency.
-
 The features I included were:
 1) A start menu with a reactive UI
 2) Sound that changes based on which fruit you ate
@@ -38,6 +31,9 @@ There are 2 zipped files, "Rachel's Snake Game PC" and "Rachel's Snake Game Wind
 In the terminal, you have to `pip install pygame` and have python downloaded from the internet to run it. 
 
 ## Code Review
+
+The code for the game is located in file main_5, since exe and exec files can't be broken into.
+
 ```python
 main_music = pygame.mixer.Sound("Art/Music/main_theme.mp3")
 fast_music = pygame.mixer.Sound("Art/Music/star_theme.mp3")
