@@ -200,8 +200,6 @@ Clickable Buttons: I found a tutorial for buttons, followed it, wrote out the co
 Changable Background: This was a stretch goal if I got all those other things done above.
 
 ## Final Reflection
-Write at least a paragraph about your experience in this course. What did you learn? What do you need to do to learn more? Key takeaways? etc.
-
 I learned an absolute boatload in this course. I'm still a bit shakey on understanding classes and writing files from the script, but I'm happy that while I'm working through the logic and reading code, I'm starting to ACTUALLY read it as opposed to just recognizing the pictures and what they mean, ie, when I see == I don't think to myself "Oh, double equals" anymore, I think "is", which is EXTREMELY helpful.
 
 I'm pretty happy that I've also learned how to debug a bunch of things. The print("DEBUG") thing helped me for many of my homeworks and helped quite a bit in my snake game to help me figure how what was changing when, and why. Being able to read the ValueErrors and the debug screen was also huge for me, and saved me a lot of time when I couldn't figure out what I had changed mid final. 
