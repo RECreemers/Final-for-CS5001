@@ -8,7 +8,7 @@
 ## Description 
 My goal was to make the Snake Game in python, specifically focusing on the menu aspects and the implimentation of the art, as well as game features. 
 
-The features I included were:
+The features included were:
 1) A start menu with a reactive UI
 2) Sound that changes based on which fruit you ate
 3) A snake that goes around the screen and grows with each apple touched
