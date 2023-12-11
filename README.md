@@ -6,7 +6,7 @@
 * Course: CS5001
 
 ## Description 
-My goal was to make the Snake Game in python.
+My goal was to make the Snake Game in python, specifically focusing on the menu aspects and the implimentation of the art, as well as game features. 
 
 The features I included were:
 1) A start menu with a reactive UI
@@ -16,8 +16,9 @@ The features I included were:
 5) A score counter that would go up by 10 after each apple touch
 6) A snake speed change after it touched either a golden or red apple for the first time
 7) A snake that had graphics on top of the bounding box rectangles created that changed based on the snake's positioning
+8) All of the art
 
-I chose this game because I've been wanting to learn how to code a game for a while, and this seemed like a good way to dip my feet into it. I also wanted to go with the snake game build style that would make it so you could include artwork for the sprite, because user experience is important for me to figure out if I want to make an enjoyable game in the future.  
+I chose this project because I wanted to learn how you think through making a game, and what all compenents have to come together in what order. I wanted this to include the art aspect, and understand how those two pipelines swirl together. To help me figure that out, I used tutorials to help me create the basic frameworks, what HAD to be there to create a barebones version of the game, and then explore why all those parts had to be in that order, where I could modify and manipulate, and where I could go to make it feel real. It was really important to me while going through this process that I wanted to learn good habits in coding games and why those were good habits. I thought it was cute when I realized I needed to create a sprite chart!
 
 ## Key Features
 So the key features that I am pretty proud of is getting the UI on the Start Menu to work. It took me a very long time to figure out how I had to nest my code to get the color to change on the text for the title screen without breaking the code. But with the start menu implimented, it feels more like a "real" game to me as opposed to a code test.
@@ -81,7 +82,7 @@ This was a huge block in the True loop which was the gameplay. Basically, it mad
             self.score = (self.score + 10)
 ```
 
-I was quite proud of this little spot. The way this is set up, in the future I can easily add more fruits, AND I can change the score based on what type of fruit was eaten. While it's in a super vanilla version, where there are only 2 fruit options and both give a score of +10 if picked. I also thought that the sound change up based on the golden apple was hilarious. The pause/unpause bit here though, that allowed the music to pick back up where it left off, and not restart it. 
+I was quite proud of this little spot. The way this is set up, in the future I can easily add more fruits, AND I can change the score based on what type of fruit was eaten. While it's in a super vanilla version, where there are only 2 fruit options and both give a score of +10 if picked. I also thought that the sound change up based on the golden apple was hilarious. The pause/unpause bit here though, that allowed the music to pick back up where it left off, and not restart it. I'm excited to work with this section more when I create other "power up" fruits, like a banana or peach, and then I can start setting the score to different amounts based on the fruit eaten
 
 ```python
         if game_state == "menu":
@@ -120,6 +121,8 @@ The menu! I made the text colors change when the left and right buttons were pre
 ```
 
 This is the meat and potatoes of the game. This section allows the snake to move forward by copying the snake_body list to modify it, adding a new Vector2 to the front of the list and removing the last Vector2 from the list. The what changes in the Vector2 list in the list (x,y) is determined by the self.direction, which changes based on the input of the play in the left, right, up, and down, which is going to always be a +1 or -1 in either the x or y.  If the snake touches a fruit, the add_snake_block is set to True and the last Vector 2 is simply not removed from the list that time. 
+
+A portion that I don't really have code for but wanted to touch on was the art implimentation. I had a great time exploring that portion. I was happy to find out that when creating vector files to use, they had to be the exact same cell size, and that if you made it too big it would go outside of the cell (you can see this in the main_2 video I have, the snake is litterally outside the window because it's too big!) I love how much sense it made that if I created a high res version of a vector image that was of the correct size, for me I had the 800x800 px background, but at a resolution of 300 dpi instead of 72 dpi(normal), it made it SUPER overblown and big, which honestly makes sense because the resolution is pixels per inch. So that was really cool. I wish I had been able to figure out why the sides of the snake are a little fuzzy on the straightways, and I have some theories, but there were other visuals that needed to be attended to. 
 
 
 ### Major Challenges
@@ -204,7 +207,7 @@ I learned an absolute boatload in this course. I'm still a bit shakey on underst
 
 I'm pretty happy that I've also learned how to debug a bunch of things. The print("DEBUG") thing helped me for many of my homeworks and helped quite a bit in my snake game to help me figure how what was changing when, and why. Being able to read the ValueErrors and the debug screen was also huge for me, and saved me a lot of time when I couldn't figure out what I had changed mid final. 
 
-I think I need to drill down more on organization of the files and breaking things down. I was frusterated for multiple hours in making my game because I kept accidentally breaking flow and I couldn't figure out why, and it actively stopped me from adding in a few featurs I really wanted to complete. And if I want to keep building cute things, I NEED to be able to keep the pipeline organized. It would also be extremely useful to find out more ways you SHOULD NOT impliment certain code to make it work.
+I want to explore more about the UX UI features provided by pygame, and how to deal with the flow of control in the main True loop because I feel like I only scratched the surface of what that area is capable of. From the research I did, the music capabilites of pygame are fine, but there isn't a lot of fine control there as I think you can only have like 6 or 8 different music channels, so if I wanted to create a game with more intricate sounds coming in, as opposed to the hammer/nail job I implimented in this one, I'll either need to dig deeper to find more libraries that deal with that or just a differnt coding language. 
 
 My key takeaways is that I need to drill the basics more in general if I want to be creative with programming, and I'm confident that the next semester and summer will provide that for me. It also became very clear to me how I'm playing with a very small toolbox in python right now, and am excited to see what other things the program will allow me to do in the future. Lastly, I'm happy to be able to start to read and sift through code so I can learn some other programming languages in a bit. 
 
