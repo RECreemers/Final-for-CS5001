@@ -307,6 +307,7 @@ class Main():
         pygame.mixer.Channel(0).pause()
         pygame.mixer.Channel(1).pause()
         self.snake.reset_snake()
+        self.score = 0 # I just saw that this line got deleted (12/14/23). Whoops. Now the score resets.
 
 
 class Popups():
